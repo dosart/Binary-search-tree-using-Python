@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "Binary_search_tree"
+version = "0.1.0"
+description = "Implementation bunary search tree"
+authors = ["Denis <Dysprosium92@ya.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "binary_search_tree" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+black = "^21.6b0"
+pytest = "^6.2.4"
+coverage = "^5.5"
+pytest-cov = "^2.12.1"
+
+[tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.15.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
