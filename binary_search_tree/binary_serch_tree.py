@@ -42,6 +42,20 @@ class BinaryTree(object):
         else:
             self._add(key, value)
 
+    def find(self, key):
+        """Return value by key.
+
+        Args:
+            key: key for find value
+
+        Returns:
+            value: value if key exist else None
+        """
+        if self.is_empty():
+            return None
+        else:
+            return self._find(key)
+
     def _add(self, key, value):
         """Add the given key and object to tree(iterative version).
 
@@ -49,6 +63,7 @@ class BinaryTree(object):
             key:  key for value
             value: value by key
         """
+        parent = self._root
         cur = self._root
         while cur:
             parent = cur
@@ -64,3 +79,22 @@ class BinaryTree(object):
         else:
             parent.right = new_node
         self._count += 1
+
+    def _find(self, key):
+        """Return value by key.
+
+        Args:
+            key: key for find value
+
+        Returns:
+            value: value if key exist else None
+        """
+        cur = self._root
+        while cur:
+            if key > cur.key:
+                cur = cur.right
+            elif key < cur.key:
+                cur = cur.left
+            else:
+                return cur.value
+        return None
