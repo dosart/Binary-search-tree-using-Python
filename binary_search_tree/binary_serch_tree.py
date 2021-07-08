@@ -56,6 +56,20 @@ class BinaryTree(object):
         else:
             return self._find(key)
 
+    def min(self):
+        """Return min key(iterative version).
+
+        Returns:
+            key: min key in tree
+        """
+        if self.is_empty():
+            return None
+
+        cur = self._root
+        while cur.left:
+            cur = cur.left
+        return cur.key
+
     def _add(self, key, value):
         """Add the given key and object to tree(iterative version).
 

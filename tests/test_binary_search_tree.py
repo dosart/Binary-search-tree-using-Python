@@ -1,4 +1,4 @@
-"""Tests of binary search tree."""
+'''Tests of binary search tree.'''
 
 import pytest
 
@@ -7,9 +7,9 @@ from binary_search_tree.node import Node
 
 
 def test_make_node():
-    node = Node(10, "Test")
+    node = Node(10, 'Test')
 
-    assert str(node) == "key: 10 value: Test"
+    assert str(node) == 'key: 10 value: Test'
 
 
 def test_make_bst():
@@ -22,7 +22,7 @@ def test_make_bst():
 def test_add_node1():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
+    bst.add(10, 'Denis')
 
     assert bst.is_empty() is False
     assert len(bst) == 1
@@ -31,9 +31,9 @@ def test_add_node1():
 def test_add_node2():
     bst = BinaryTree()
 
-    bst.add(29, "Denis")
-    bst.add(35, "Dima")
-    bst.add(28, "Egor")
+    bst.add(29, 'Denis')
+    bst.add(35, 'Dima')
+    bst.add(28, 'Egor')
 
     assert bst.is_empty() is False
     assert len(bst) == 3
@@ -42,10 +42,10 @@ def test_add_node2():
 def test_add_node3():
     bst = BinaryTree()
 
-    bst.add(29, "Denis")
-    bst.add(35, "Dima")
-    bst.add(28, "Egor")
-    bst.add(28, "E")
+    bst.add(29, 'Denis')
+    bst.add(35, 'Dima')
+    bst.add(28, 'Egor')
+    bst.add(28, 'E')
 
     assert bst.is_empty() is False
     assert len(bst) == 3
@@ -54,58 +54,91 @@ def test_add_node3():
 def test_find_value1():
     bst = BinaryTree()
 
-    result = bst.find("Key")
+    result = bst.find('Key')
     assert result is None
 
 
 def test_find_value2():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
+    bst.add(10, 'Denis')
 
     result = bst.find(10)
-    assert result == "Denis"
+    assert result == 'Denis'
 
 
 def test_find_value3():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
-    bst.add(11, "Dima")
-    bst.add(9, "Egor")
+    bst.add(10, 'Denis')
+    bst.add(11, 'Dima')
+    bst.add(9, 'Egor')
 
     result = bst.find(11)
-    assert result == "Dima"
+    assert result == 'Dima'
 
 
 def test_find_value4():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
-    bst.add(11, "Dima")
-    bst.add(9, "Egor")
+    bst.add(10, 'Denis')
+    bst.add(11, 'Dima')
+    bst.add(9, 'Egor')
 
     result = bst.find(9)
-    assert result == "Egor"
+    assert result == 'Egor'
 
 
 def test_find_value5():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
-    bst.add(11, "Dima")
-    bst.add(9, "Egor")
+    bst.add(10, 'Denis')
+    bst.add(11, 'Dima')
+    bst.add(9, 'Egor')
 
     result = bst.find(11)
-    assert result == "Dima"
+    assert result == 'Dima'
 
 
 def test_find_value6():
     bst = BinaryTree()
 
-    bst.add(10, "Denis")
-    bst.add(11, "Dima")
-    bst.add(9, "Egor")
+    bst.add(10, 'Denis')
+    bst.add(11, 'Dima')
+    bst.add(9, 'Egor')
 
     result = bst.find(13)
     assert result is None
+
+
+def test_min1():
+    bst = BinaryTree()
+
+    assert bst.min() is None
+
+
+def test_min2():
+    bst = BinaryTree()
+
+    bst.add(10, 'Denis')
+
+    assert bst.min() == 10
+
+
+def test_min3():
+    bst = BinaryTree()
+
+    bst.add(10, 'Denis')
+    bst.add(9, 'Dima')
+
+    assert bst.min() == 9
+
+
+def test_min4():
+    bst = BinaryTree()
+
+    bst.add(10, 'Denis')
+    bst.add(9, 'Dima')
+    bst.add(11, 'Egor')
+
+    assert bst.min() == 9
