@@ -12,7 +12,7 @@ class BinaryTree(object):
         self._count = 0
 
     def __len__(self):
-        """Return size of list
+        """Return size of list.
 
         Returns:
             size(int): size of nodes
