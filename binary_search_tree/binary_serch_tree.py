@@ -2,6 +2,8 @@
 
 """Binary search tree implementation using oop style. Can be used as a dictionary."""
 
+from binary_search_tree.node import Node
+
 
 class BinaryTree(object):
     """Class implements dictionary using binary search tree."""
@@ -26,3 +28,39 @@ class BinaryTree(object):
             bool: True if tree is empty else False
         """
         return self._count == 0
+
+    def add(self, key, value):
+        """Add the given key and object to tree(iterative version).
+
+        Args:
+            key:  key for value
+            value: value by key
+        """
+        if self.is_empty():
+            self._root = Node(key, value)
+            self._count += 1
+        else:
+            self._add(key, value)
+
+    def _add(self, key, value):
+        """Add the given key and object to tree(iterative version).
+
+        Args:
+            key:  key for value
+            value: value by key
+        """
+        cur = self._root
+        while cur:
+            parent = cur
+            if key < cur.key:
+                cur = cur.left
+            elif key > cur.key:
+                cur = cur.right
+            else:
+                return
+        new_node = Node(key, value)
+        if key < parent.key:
+            parent.left = new_node
+        else:
+            parent.right = new_node
+        self._count += 1

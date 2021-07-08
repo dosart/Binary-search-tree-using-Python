@@ -10,11 +10,11 @@ class Node(object):
         """Class implements node for binary search tree.
 
         Args:
-            key: _key for node
-            value: _value for node
+            key: key for node
+            value: value for node
         """
-        self._key = key
-        self._value = value
+        self.key = key
+        self.value = value
 
         # pointers for left and right children
         self.left = None
@@ -24,6 +24,6 @@ class Node(object):
         """Return a string representation of node.
 
         Returns:
-            str(string): _key and _value
+            str(string): key and value
         """
-        return 'key: {0} value: {1}'.format(self._key, self._value)
+        return "key: {0} value: {1}".format(self.key, self.value)
