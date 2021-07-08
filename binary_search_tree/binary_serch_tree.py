@@ -20,7 +20,7 @@ class BinaryTree(object):
         return self._count
 
     def is_empty(self):
-        """Returns True if tree is empty.
+        """Return True if tree is empty.
 
         Returns:
             bool: True if tree is empty else False
