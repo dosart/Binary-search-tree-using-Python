@@ -50,10 +50,7 @@ class BinaryTree(object):
         Returns:
             value: none if key not contains else value
         """
-        if self.find(key) is not None:
-            return True
-        else:
-            return False
+        return self.find(key) is not None
 
     def is_empty(self):
         """Return True if tree is empty.
