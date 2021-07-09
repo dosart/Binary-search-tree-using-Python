@@ -85,12 +85,6 @@ class BinaryTree(object):
         return cur.key
 
     def _add(self, key, value):
-        """Add the given key and object to tree(iterative version).
-
-        Args:
-            key:  key for value
-            value: value by key
-        """
         parent = self._root
         cur = self._root
         while cur:
@@ -109,14 +103,6 @@ class BinaryTree(object):
         self._count += 1
 
     def _find(self, key):
-        """Return value by key.
-
-        Args:
-            key: key for find value
-
-        Returns:
-            value: value if key exist else None
-        """
         cur = self._root
         while cur:
             if key > cur.key:
