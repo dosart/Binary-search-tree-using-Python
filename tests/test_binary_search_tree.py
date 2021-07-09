@@ -21,7 +21,6 @@ def test_make_bst():
 
 def test_add_node1():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
 
     assert bst.is_empty() is False
@@ -30,7 +29,6 @@ def test_add_node1():
 
 def test_add_node2():
     bst = BinaryTree()
-
     bst.add(29, 'Denis')
     bst.add(35, 'Dima')
     bst.add(28, 'Egor')
@@ -41,7 +39,6 @@ def test_add_node2():
 
 def test_add_node3():
     bst = BinaryTree()
-
     bst.add(29, 'Denis')
     bst.add(35, 'Dima')
     bst.add(28, 'Egor')
@@ -64,7 +61,6 @@ def test_find_value1():
 
 def test_find_value2():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
 
     result1 = bst.find(10)
@@ -77,7 +73,6 @@ def test_find_value2():
 
 def test_find_value3():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
@@ -92,7 +87,6 @@ def test_find_value3():
 
 def test_find_value4():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
@@ -107,7 +101,6 @@ def test_find_value4():
 
 def test_find_value5():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
@@ -122,7 +115,6 @@ def test_find_value5():
 
 def test_find_value6():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
@@ -143,26 +135,110 @@ def test_min1():
 
 def test_min2():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
 
-    assert bst.min() == 10
+    node = bst.min()
+    assert node.key == 10
 
 
 def test_min3():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(9, 'Dima')
 
-    assert bst.min() == 9
+    node = bst.min()
+    assert node.key == 9
 
 
 def test_min4():
     bst = BinaryTree()
-
     bst.add(10, 'Denis')
     bst.add(9, 'Dima')
     bst.add(11, 'Egor')
 
-    assert bst.min() == 9
+    node = bst.min()
+    assert node.key == 9
+
+
+def test_get_successor_key1():
+    bst = BinaryTree()
+    successor = bst.get_successor_key(1)
+
+    assert successor is None
+
+
+def test_get_successor_key2():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+
+    successor = bst.get_successor_key(1)
+
+    assert successor is None
+
+
+def test_get_successor_key3():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+    bst.add(2, 'Denis')
+
+    successor = bst.get_successor_key(1)
+
+    assert successor.key == 2
+
+
+def test_get_successor_key4():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+    bst.add(2, 'Denis')
+
+    successor = bst.get_successor_key(2)
+
+    assert successor is None
+
+
+def test_get_successor_key5():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    successor = bst.get_successor_key(5)
+
+    assert successor.key == 7
+
+
+def test_get_successor_key6():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    successor = bst.get_successor_key(15)
+
+    assert successor.key == 17
+
+
+def test_get_successor_key7():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    successor = bst.get_successor_key(21)
+
+    assert successor is None

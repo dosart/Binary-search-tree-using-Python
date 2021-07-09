@@ -99,7 +99,7 @@ class BinaryTree(object):
         cur = self._root
         while cur.left:
             cur = cur.left
-        return cur.key
+        return cur
 
     def max(self):
         """Return max key(iterative version).
@@ -113,7 +113,27 @@ class BinaryTree(object):
         cur = self._root
         while cur.right:
             cur = cur.right
-        return cur.key
+        return cur
+
+    def get_successor_key(self, key):
+        """Return the node that contains next key.
+
+        Returns:
+            node: next keys
+        """
+        successor = None
+        cur = self._root
+        while cur:
+            if key < cur.key:
+                successor = cur
+                cur = cur.left
+            elif key > cur.key:
+                cur = cur.right
+            else:
+                if cur.right:
+                    return self._min(cur.right)
+                return successor
+        return None
 
     def _add(self, key, value):
         parent = self._root
@@ -143,3 +163,9 @@ class BinaryTree(object):
             else:
                 return cur.value
         return None
+
+    def _min(self, root):
+        parent = root
+        while parent.left:
+            parent = parent.left
+        return parent
