@@ -118,8 +118,11 @@ class BinaryTree(object):
     def get_successor_key(self, key):
         """Return the node that contains next key.
 
+        Args:
+            key: key for search next key
+
         Returns:
-            node: next keys
+            node: node contains next keys
         """
         successor = None
         cur = self._root
