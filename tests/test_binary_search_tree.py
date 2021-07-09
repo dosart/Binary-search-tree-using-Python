@@ -54,8 +54,12 @@ def test_add_node3():
 def test_find_value1():
     bst = BinaryTree()
 
-    result = bst.find('Key')
-    assert result is None
+    result1 = bst.find('Key')
+    result2 = bst['key']
+
+    assert result1 is None
+    assert result2 is None
+
 
 
 def test_find_value2():
@@ -63,8 +67,11 @@ def test_find_value2():
 
     bst.add(10, 'Denis')
 
-    result = bst.find(10)
-    assert result == 'Denis'
+    result1 = bst.find(10)
+    result2 = bst.find(10)
+
+    assert result1 == 'Denis'
+    assert result2 == 'Denis'
 
 
 def test_find_value3():
@@ -74,8 +81,11 @@ def test_find_value3():
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
 
-    result = bst.find(11)
-    assert result == 'Dima'
+    result1 = bst.find(11)
+    result2 = bst[11]
+
+    assert result1 == 'Dima'
+    assert result2 == 'Dima'
 
 
 def test_find_value4():
@@ -85,8 +95,11 @@ def test_find_value4():
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
 
-    result = bst.find(9)
-    assert result == 'Egor'
+    result1 = bst.find(9)
+    result2 = bst[9]
+
+    assert result1 == 'Egor'
+    assert result2 == 'Egor'
 
 
 def test_find_value5():
@@ -96,8 +109,11 @@ def test_find_value5():
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
 
-    result = bst.find(11)
-    assert result == 'Dima'
+    result1 = bst.find(11)
+    result2 = bst[11]
+
+    assert result1 == 'Dima'
+    assert result2 == 'Dima'
 
 
 def test_find_value6():
@@ -107,8 +123,11 @@ def test_find_value6():
     bst.add(11, 'Dima')
     bst.add(9, 'Egor')
 
-    result = bst.find(13)
-    assert result is None
+    result1 = bst.find(13)
+    result2 = bst[13]
+
+    assert result1 is None
+    assert result2 is None
 
 
 def test_min1():

@@ -21,6 +21,17 @@ class BinaryTree(object):
         """
         return self._count
 
+    def __getitem__(self, key):
+        """Return value bu key.
+
+        Args:
+            key: key for find value
+
+        Returns:
+            value: value if key exist else None
+        """
+        return self.find(key)
+
     def is_empty(self):
         """Return True if tree is empty.
 
