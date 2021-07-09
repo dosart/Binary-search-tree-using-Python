@@ -32,6 +32,29 @@ class BinaryTree(object):
         """
         return self.find(key)
 
+    def __setitem__(self, key, value):
+        """Add the given key and object to tree(iterative version).
+
+        Args:
+            key:  key for value
+            value: value by key
+        """
+        self.add(key, value)
+
+    def __contains__(self, key):
+        """Return True if key contains in Tree.
+
+        Args:
+            key: key for search
+
+        Returns:
+            value: none if key not contains else value
+        """
+        if self.find(key) is not None:
+            return True
+        else:
+            return False
+
     def is_empty(self):
         """Return True if tree is empty.
 

@@ -59,7 +59,7 @@ def test_find_value1():
 
     assert result1 is None
     assert result2 is None
-
+    assert ('key' in bst) is False
 
 
 def test_find_value2():
@@ -72,6 +72,7 @@ def test_find_value2():
 
     assert result1 == 'Denis'
     assert result2 == 'Denis'
+    assert (10 in bst) is True
 
 
 def test_find_value3():
@@ -86,6 +87,7 @@ def test_find_value3():
 
     assert result1 == 'Dima'
     assert result2 == 'Dima'
+    assert (11 in bst) is True
 
 
 def test_find_value4():
@@ -100,6 +102,7 @@ def test_find_value4():
 
     assert result1 == 'Egor'
     assert result2 == 'Egor'
+    assert (9 in bst) is True
 
 
 def test_find_value5():
@@ -114,6 +117,7 @@ def test_find_value5():
 
     assert result1 == 'Dima'
     assert result2 == 'Dima'
+    assert (11 in bst) is True
 
 
 def test_find_value6():
@@ -128,6 +132,7 @@ def test_find_value6():
 
     assert result1 is None
     assert result2 is None
+    assert (13 in bst) is False
 
 
 def test_min1():
