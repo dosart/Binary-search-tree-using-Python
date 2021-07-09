@@ -71,10 +71,10 @@ class BinaryTree(object):
         return cur.key
 
     def max(self):
-        """Return min key(iterative version).
+        """Return max key(iterative version).
 
         Returns:
-            key: min key in tree
+            key: max key in tree
         """
         if self.is_empty():
             return None
