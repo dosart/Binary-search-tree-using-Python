@@ -2,7 +2,7 @@ install: ## Install dependencies
 	@poetry install
 
 format: ## Install dependencies
-	poetry run black .
+	poetry run black -S .
 
 test: ## Run tests
 	poetry run coverage run --source=binary_search_tree -m pytest tests

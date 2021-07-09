@@ -26,4 +26,4 @@ class Node(object):
         Returns:
             str(string): key and value
         """
-        return "key: {0} value: {1}".format(self.key, self.value)
+        return 'key: {0} value: {1}'.format(self.key, self.value)
