@@ -161,6 +161,17 @@ class BinaryTree(object):
                 return predecessor
         return None
 
+    @property
+    def height(self):
+        """Return height of tree.
+
+        Returns:
+            height(int): height of tree
+        """
+        if self.is_empty():
+            return 0
+        return max(self._left_nodes(), self._right_nodes())
+
     def _add(self, key, value):
         parent = self._root
         cur = self._root
@@ -201,3 +212,20 @@ class BinaryTree(object):
         while parent.right:
             parent = parent.right
         return parent
+
+    def _left_nodes(self):
+        nodes = 1
+        cur = self._root.left
+        while cur:
+            nodes += 1
+            cur = cur.left
+
+        return nodes
+
+    def _right_nodes(self):
+        nodes = 1
+        cur = self._root.right
+        while cur:
+            nodes += 1
+            cur = cur.right
+        return nodes

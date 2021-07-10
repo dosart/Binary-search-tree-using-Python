@@ -316,3 +316,33 @@ def test_get_predecessor_key5():
     predecessor = bst.get_predecessor_key(3)
 
     assert predecessor is None
+
+
+def test_height1():
+    bst = BinaryTree()
+
+    assert bst.height == 0
+
+
+def test_height2():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+
+    assert bst.height == 1
+
+
+def test_height2():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+    bst.add(12, 'Redis')
+
+    assert bst.height == 2
+
+
+def test_height3():
+    bst = BinaryTree()
+    bst.add(1, 'Denis')
+    bst.add(12, 'Redis')
+    bst.add(0, 'Redis')
+
+    assert bst.height == 2
