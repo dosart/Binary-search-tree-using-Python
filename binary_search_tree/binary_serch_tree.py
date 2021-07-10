@@ -60,6 +60,15 @@ class BinaryTree(object):
         """
         return self._count == 0
 
+    @property
+    def nodes_count(self):
+        """Return count of nodes.
+
+        Returns:
+            count(int): count of nodes
+        """
+        return self._count
+
     def add(self, key, value):
         """Add the given key and object to tree(iterative version).
 
