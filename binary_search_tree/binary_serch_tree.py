@@ -138,6 +138,29 @@ class BinaryTree(object):
                 return successor
         return None
 
+    def get_predecessor_key(self, key):
+        """Return the node contains previous key.
+
+        Args:
+            key: key for search previous key
+
+        Returns:
+            node: node contains previous keys
+        """
+        predecessor = None
+        cur = self._root
+        while cur:
+            if key < cur.key:
+                cur = cur.left
+            elif key > cur.key:
+                predecessor = cur
+                cur = cur.right
+            else:
+                if cur.left:
+                    return self._max(cur.left)
+                return predecessor
+        return None
+
     def _add(self, key, value):
         parent = self._root
         cur = self._root
@@ -171,4 +194,10 @@ class BinaryTree(object):
         parent = root
         while parent.left:
             parent = parent.left
+        return parent
+
+    def _max(self, root):
+        parent = root
+        while parent.right:
+            parent = parent.right
         return parent

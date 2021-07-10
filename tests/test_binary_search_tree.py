@@ -242,3 +242,77 @@ def test_get_successor_key7():
     successor = bst.get_successor_key(21)
 
     assert successor is None
+
+
+def test_get_predecessor_key1():
+    bst = BinaryTree()
+    successor = bst.get_successor_key(1)
+
+    assert successor is None
+
+
+def test_get_predecessor_key2():
+    bst = BinaryTree()
+    bst.add(10, 'Denis')
+
+    predecessor = bst.get_predecessor_key(10)
+
+    assert predecessor is None
+
+
+def test_get_predecessor_key2():
+    bst = BinaryTree()
+    bst.add(10, 'Denis')
+    bst.add(11, 'Denis')
+
+    predecessor = bst.get_predecessor_key(11)
+
+    assert predecessor.key == 10
+
+
+def test_get_predecessor_key3():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    predecessor = bst.get_predecessor_key(17)
+
+    assert predecessor.key == 15
+
+
+def test_get_predecessor_key4():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    predecessor = bst.get_predecessor_key(5)
+
+    assert predecessor.key == 3
+
+
+def test_get_predecessor_key5():
+    bst = BinaryTree()
+    bst.add(9, 'Denis')
+    bst.add(7, 'Denis')
+    bst.add(15, 'Denis')
+    bst.add(3, 'Denis')
+    bst.add(8, 'Denis')
+    bst.add(5, 'Denis')
+    bst.add(21, 'Denis')
+    bst.add(17, 'Denis')
+
+    predecessor = bst.get_predecessor_key(3)
+
+    assert predecessor is None
