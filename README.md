@@ -4,3 +4,12 @@
 
 # Binary-search-tree-using-Python
 Implementation binary search tree
+
+- [x] add -  Add the given key and object to hash table.
+- [x] find - Finds key in tree
+- [x] min - Returns node with min key
+- [x] max - Returns node with max key
+- [x] height - Returns the height of the tree in nodes, 0 if empty
+- [x] count - Returns the number of nodes stored in the tree
+- [x] successor - Returns the node that contains next key
+- [x] predecessor - Returns the node contains previous key 
